@@ -6,8 +6,9 @@ public class SpaceDirectionMovement : MonoBehaviour
 {
     [SerializeField] Vector3 direction;
     [SerializeField] float speed;
+    [SerializeField] Space space = Space.World;
     void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(direction * speed * Time.deltaTime, space);
     }
 }
