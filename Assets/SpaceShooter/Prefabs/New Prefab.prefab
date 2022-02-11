@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3328094}
   - component: {fileID: 2320856}
   - component: {fileID: -3780925247630126179}
+  - component: {fileID: -4113186021240845063}
   m_Layer: 0
   m_Name: New Prefab
   m_TagString: Untagged
@@ -97,3 +98,16 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: -1}
   speed: 50
   space: 0
+--- !u!114 &-4113186021240845063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2219437359864389144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e38d00a1a606f340a2da8112d2752d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 20

@@ -172,6 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3668676186225079447}
   - component: {fileID: -5731163516703942367}
+  - component: {fileID: 852883514842889705}
   m_Layer: 0
   m_Name: planet 5
   m_TagString: Untagged
@@ -210,3 +211,16 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: -1}
   speed: 10
   space: 0
+--- !u!114 &852883514842889705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991757696038455386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e38d00a1a606f340a2da8112d2752d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 80
