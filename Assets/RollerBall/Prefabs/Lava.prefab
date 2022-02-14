@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3287500369903691082}
   - component: {fileID: 3287500369903691077}
   - component: {fileID: 3287500369903691076}
+  - component: {fileID: 9130281339672829588}
   - component: {fileID: 3870404568775909300}
   m_Layer: 0
   m_Name: Lava
@@ -113,6 +114,22 @@ MonoBehaviour:
   damage: 20
   oneTime: 0
   damageTimer: 0
+--- !u!114 &9130281339672829588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287500369903691079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 684deae6021a20343a68315446fc14bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 1, z: 0}
+  magnitude: 30
+  forceMode: 1
+  away: 0
 --- !u!95 &3870404568775909300
 Animator:
   serializedVersion: 3

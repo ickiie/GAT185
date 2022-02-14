@@ -41,15 +41,15 @@ public class BoxSpawner : MonoBehaviour
             }
             else
             {
-            timer = Random.Range(minTime, maxTime);
+                timer = Random.Range(minTime, maxTime);
             }
 
             if (randRotate)
             {
-            Instantiate(spawnPrefabs[Random.Range(0, spawnPrefabs.Length)], GetRandomPointInBoxCollider(), RandomizeRotation());
+                Instantiate(spawnPrefabs[Random.Range(0, spawnPrefabs.Length)], GetRandomPointInBoxCollider(), RandomizeRotation());
             } else
             {
-            Instantiate(spawnPrefabs[Random.Range(0, spawnPrefabs.Length)], GetRandomPointInBoxCollider(), transform.rotation);
+                Instantiate(spawnPrefabs[Random.Range(0, spawnPrefabs.Length)], GetRandomPointInBoxCollider(), transform.rotation);
             }
         }
     }

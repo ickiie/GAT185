@@ -31,6 +31,4 @@ public class Damage : MonoBehaviour
             health.Damage(damage * Time.deltaTime);
         }
     }
-
-
 }
