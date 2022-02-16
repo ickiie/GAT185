@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba441852bbb4ec469c121fc6003c905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 0}
+  deathPrefab: {fileID: 100006, guid: 5124dc2491c482e45ac7dd914d77ddc6, type: 3}
   destroyOnDeath: 1
   maxHealth: 0
   destroyRoot: 0

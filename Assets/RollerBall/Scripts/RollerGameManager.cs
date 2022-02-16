@@ -12,7 +12,8 @@ public class RollerGameManager : Singleton<RollerGameManager>
 		PLAYER_START,
 		GAME,
 		PLAYER_DEAD,
-		GAME_OVER
+		GAME_OVER,
+		GAME_WON
 	}
 
 	[SerializeField] GameObject playerPrefab;
@@ -21,6 +22,7 @@ public class RollerGameManager : Singleton<RollerGameManager>
 
 	[SerializeField] GameObject titleScreen;
 	[SerializeField] GameObject gameOverScreen;
+	[SerializeField] GameObject gameWonScreen;
 	[SerializeField] TMP_Text scoreUI;
 	[SerializeField] TMP_Text livesUI;
 	[SerializeField] TMP_Text timeUI;
@@ -45,7 +47,7 @@ public class RollerGameManager : Singleton<RollerGameManager>
 		set
 		{
 			score = value;
-			scoreUI.text = score.ToString("D2");
+			scoreUI.text = score.ToString("D1");
 		}
 	}
 	public float GameTime
@@ -92,6 +94,12 @@ public class RollerGameManager : Singleton<RollerGameManager>
 					state = State.GAME_OVER;
 					stateTimer = 5;
                 }
+				if (score == 3)
+                {
+					state = State.GAME_WON;
+					gameWonScreen.SetActive(true);
+					stateTimer = 10;
+				}
                 break;
 			case State.PLAYER_DEAD:
 				if (stateTimer <= 0)
@@ -107,7 +115,15 @@ public class RollerGameManager : Singleton<RollerGameManager>
 					titleScreen.SetActive(true);
                 }
                 break;
-            default:
+			case State.GAME_WON:
+				if (stateTimer <= 0)
+				{
+					state = State.TITLE;
+					gameWonScreen.SetActive(false);
+					titleScreen.SetActive(true);
+				}
+				break;
+			default:
                 break;
         }
     }

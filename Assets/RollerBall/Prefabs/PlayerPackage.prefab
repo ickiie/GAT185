@@ -154,6 +154,7 @@ MonoBehaviour:
   jumpForce: 5
   forceMode: 0
   viewTransform: {fileID: 999449539888745367}
+  rigidbody: {fileID: 0}
   timer: 0.5
 --- !u!114 &6396625097884780197
 MonoBehaviour:

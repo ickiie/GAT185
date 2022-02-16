@@ -10,10 +10,12 @@ public class RollerPlayer : MonoBehaviour, IDestructable
     [SerializeField] float jumpForce = 5;
     [SerializeField] ForceMode forceMode;
     [SerializeField] Transform viewTransform;
+    [SerializeField] Rigidbody rigidbody;
 
     Rigidbody rb;
     Vector3 force = Vector3.zero;
 
+    private bool hasJump = true;
 
     public float timer = 0.5f;
     void Start()
@@ -26,10 +28,7 @@ public class RollerPlayer : MonoBehaviour, IDestructable
     // Update is called once per frame
     void Update()
     {
-        if (timer > 0)
-        {
-            timer -= Time.deltaTime;
-        }
+
 
         Vector3 direction = Vector3.zero;
 
@@ -41,10 +40,11 @@ public class RollerPlayer : MonoBehaviour, IDestructable
 
         force = direction * maxForce;
 
-        if (Input.GetButtonDown("Jump") && timer <= 0)
+        if (Input.GetButtonDown("Jump") && hasJump)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            timer = 1.5f;
+            timer = 0.5f;
+            hasJump = false;
         }
 
         RollerGameManager.Instance.playerHealth = GetComponent<Health>().health;
@@ -59,5 +59,28 @@ public class RollerPlayer : MonoBehaviour, IDestructable
     public void Destroyed()
     {
         RollerGameManager.Instance.OnPlayerDead();
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "world")
+        {
+            hasJump = true;
+        }
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.tag == "world")
+        {
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
+            }
+            if (timer <= 0)
+            {
+                hasJump = true;
+            }
+        }
     }
 }
